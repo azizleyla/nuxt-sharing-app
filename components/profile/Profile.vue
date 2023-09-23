@@ -72,8 +72,9 @@
 <script setup>
 import store from "~/store/index";
 const user = computed(() => store.state.user);
-import { useToast } from "vue-toastification";
-const toast = useToast();
+// import pkg from "vue-toastification";
+// const { useToast } = pkg;
+// const toast = useToast;
 
 onMounted(() => {
   const storedUser = JSON.parse(sessionStorage.getItem("user"));
@@ -84,7 +85,7 @@ onMounted(() => {
 const handleSubmit = () => {
   store.commit("saveUser", store.state.user);
   sessionStorage.setItem("user", JSON.stringify(store.state.user));
-  toast.success("Your changes have been successfully saved!");
+  // toast.success("Your changes have been successfully saved!");
 };
 
 // import SaveButton from "~/components/common/SaveButton";
